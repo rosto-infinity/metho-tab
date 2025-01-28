@@ -147,6 +147,10 @@ console.log(fruits18);
 
 
 
-// methodes sur les string
+//Méthodes sur les chaînes de caractères en JavaScript
 
+
+// 1-length :Renvoie la longueur d'une chaîne
+let texte = "Bonjour";
+let longueur = texte.length; // 7
 
