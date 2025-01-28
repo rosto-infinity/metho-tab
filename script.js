@@ -100,7 +100,7 @@ let a2 = fruits16.includes("Mango"); // true
 let ages = [3, 10, 18, 20];
 let a3 = ages.find(checkAdult);
 
-function checkAdult(age) {  
+function checkAdult(age) {
   return age >= 18;
 }
 
@@ -118,12 +118,12 @@ let roots = numbers.map(Math.sqrt); // [1, 2, 3]
 
 // 25-Array.prototype.reduce() : Applique une fonction contre un accumulateur et chaque élément dans le tableau (de gauche à droite) pour réduire à une seule valeur.
 
-let total = [0, 1, 2, 3].reduce(function(a, b) {
+let total = [0, 1, 2, 3].reduce(function (a, b) {
   return a + b;
 }); // 6
 
 // 26-Array.prototype.reduceRight() : Applique une fonction contre un accumulateur et chaque élément dans le tableau (de droite à gauche) pour réduire à une seule valeur.
-let total1 = [0, 1, 2, 3].reduceRight(function(a, b) {
+let total1 = [0, 1, 2, 3].reduceRight(function (a, b) {
   return a + b;
 }); // 6
 
@@ -143,7 +143,7 @@ fruits17.fill("Kiwi"); // ["Kiwi", "Kiwi", "Kiwi", "Kiwi"]
 let fruits18 = ["Banana", "Orange", "Apple", "Mango"];
 fruits18.copyWithin(2, 0); // ["Banana", "Orange", "Banana", "Orange"]
 
-console.log(fruits18);
+// console.log(fruits18);
 
 
 
@@ -153,8 +153,129 @@ let texte = "Bonjour";
 let longueur = texte.length; // 7
 
 // 2-charAt() : Renvoie le caractère à une position spécifiée.
+let texte1 = "Hello";
+
+let resultat = texte1.charAt(0); // "H"
+
+// 3-charCodeAt() : Renvoie le code Unicode du caractère à une position spécifiée.
+let texte2 = "Hello";
+
+let resultat1 = texte2.charCodeAt(0); // 72
+
+// 4-concat() : Joint deux ou plusieurs chaînes de caractères.
+let texte3 = "Hello";
+let resultat2 = texte3.concat(" ", "World"); // "Hello World"
+
+// 5-endsWith() : Détermine si une chaîne de caractères se termine par les caractères d'une autre chaîne de caractères, renvoyant true ou false selon le cas.
+let texte4 = "Hello World";
+let resultat3 = texte4.endsWith("World"); // true
+
+// 6-fromCharCode() : Convertit les valeurs Unicode en caractères.
+let resultat4 = String.fromCharCode(72, 69, 76, 76, 79); // "HELLO"
+
+// 7-includes() : Détermine si une chaîne de caractères contient les caractères d'une autre chaîne de caractères, renvoyant true ou false selon le cas.
+let texte5 = "Hello World";
+let resultat5 = texte5.includes("World"); // true
+
+// 8-indexOf() : Renvoie l'index de la première occurrence d'un texte spécifié dans une chaîne de caractères.
+
+let texte6 = "Hello World";
+let resultat6 = texte6.indexOf("World"); // 6
+
+// 9-lastIndexOf() : Renvoie l'index de la dernière occurrence d'un texte spécifié dans une chaîne de caractères.
+let texte7 = "Hello World";
+let resultat7 = texte7.lastIndexOf("World"); // 6
+
+// 10-match() : Recherche une correspondance dans une chaîne de caractères avec une expression régulière.
+let texte8 = "The rain in SPAIN stays mainly in the plain";
+let resultat8 = texte8.match(/ain/g); // ["ain", "ain", "ain"]
+
+// 11-repeat() : Renvoie une nouvelle chaîne de caractères, contenant le nombre de copies spécifié d'une chaîne de caractères.
+let texte9 = "Hello World";
+let resultat9 = texte9.repeat(2); // "Hello WorldHello World"
+
+// 12-replace() : Recherche une correspondance dans une chaîne de caractères avec une expression régulière, et remplace la correspondance par une chaîne de remplacement.
+let texte10 = "Hello World";
+let resultat10 = texte10.replace("World", "There"); // "Hello There"
+
+// 13-search() : Recherche une correspondance dans une chaîne de caractères avec une expression régulière, et renvoie la position de la correspondance.
+let texte11 = "Hello World";
+let resultat11 = texte11.search("World"); // 6
 
 
+// 14-toUpperCase() : Convertit une chaîne de caractères en majuscules.
+let texte12 = "Hello World";
+let resultat12 = texte12.toUpperCase(); // "HELLO WORLD"
+
+// 15-toLowerCase() : Convertit une chaîne de caractères en minuscules.
+let texte13 = "Hello World";
+
+let resultat13 = texte13.toLowerCase(); // "hello world"
+
+// 16-slice() : Extrait une partie d'une chaîne de caractères et renvoie la partie extraite dans une nouvelle chaîne.
+let texte14 = "Hello World";
+let resultat14 = texte14.slice(0, 5); // "Hello"
+
+// 17-split() : Divise une chaîne de caractères en un tableau de sous-chaînes.
+let texte15 = "Hello World";
+let resultat15 = texte15.split(" "); // ["Hello", "World"]
+
+// 18-startsWith() : Détermine si une chaîne de caractères commence par les caractères d'une autre chaîne de caractères, renvoyant true ou false selon le cas.
+let texte16 = "Hello World";
+let resultat16 = texte16.startsWith("Hello"); // true
+
+// 19-substr() : Extrait les caractères d'une chaîne, en commençant à une position spécifiée, et a une longueur spécifiée.
+let texte17 = "Hello World";
+let resultat17 = texte17.substr(6, 5); // "World"
+
+
+
+const target =
+  document.getElementById("target");
+let array = [
+  "Développeur",
+  "Graphiste",
+  " Créatif"
+];
+
+let wordIndex = 0;
+let letterIndex = 0;
+//
+// target.textContent += array[1];
+// target.textContent += array[2];
+// target.style.color = "yellow";
+
+const createLetter = () => {
+  const letter =document.createElement("span");
+  target.appendChild(letter);
+  letter.textContent = array[wordIndex][letterIndex];
+  setTimeout(() => {
+    letter.remove();
+  }, 2800);
+}
+//createLetter();
+// setInterval(createLetter, 300);
+const loop = () => {
+  setTimeout(() => {
+    if (wordIndex >= array.length) {
+      wordIndex = 0;
+      letterIndex = 0;
+      loop();
+    } else if (letterIndex <
+      array[wordIndex].length) {
+      createLetter();
+      letterIndex++;
+      loop();
+    } else {
+      wordIndex++;
+      letterIndex = 0;
+      setTimeout(() => {
+        loop();
+      }, 2800);
+    }
+  }, 60);
+}
+loop();
 
 
 
